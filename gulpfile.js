@@ -61,10 +61,13 @@ gulp.task('html', function(){
     miniCSS: true,  // 压缩页面CSS
   }
   return gulp.src('src/**.html')
-    // .pipe(base64({
-    //   baseDir: 'src',
-    //   maxImageSize: 4*1024
-    // }))
+    .pipe(base64({
+      baseDir: 'src',
+      fileType: 'html',
+      rule: /.\/assets\/(.*)\.(jpg|bmp|gif|ico|pcx|jpeg|tif|png|raw|tga)/g, // 此处应该指明图片的位置
+      maxImageSize: 4*1024,
+      debug: false,
+    }))
     .pipe(htmlmin(options))
     .pipe(gulp.dest('bulid'))
     .pipe(reload({stream: true}))

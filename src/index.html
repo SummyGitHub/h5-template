@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>H5模板</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+  <script>
+    //只允许微信打开
+    // if (navigator.userAgent.match(/MicroMessenger/i) != 'MicroMessenger') {
+    //   var opened = window.open('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa27c6348e6ffd986&redirect_uri=http%3A%2F%2Fapi.wxhand.com%2Faddon%2FWeiSite%2FWeiSiteWap%2Findex%2Fhmp%2Fbde59e86f8e010c2462eaa862561c350.html&response_type=code&scope=snsapi_base&state=hd0&connect_redirect=1#wechat_redirect', '_self');
+    // }
+
+    var uAgent = window.navigator.userAgent,
+      isIphone = uAgent.match(/iphone/i),
+      is2345 = uAgent.match(/Mb2345/i),
+      isSogou = uAgent.match(/sogoumobilebrowser/ig),
+      isLiebao = uAgent.match(/liebaofast/i),
+      doc = document.documentElement,
+      width =  doc.clientWidth,
+      height = doc.clientHeight,
+      dpr = 1, fontSize = 50;
+    function getDF(){
+      if (window.devicePixelRatio) {
+          dpr = window.devicePixelRatio;
+      } else {
+          dpr = isIphone ? width > 818 ? 3 : width > 480 ? 2 : 1 : 1;
+      }
+      if(width > height){
+        width = height;
+      }
+      fontSize = width > 1080 ? 144 : width / 6.4;
+      fontSize = fontSize > 32 ? fontSize : 32;
+      doc.setAttribute('data-dpr', dpr);
+      doc.style.fontSize = fontSize + 'px';
+    }
+    getDF();
+    if(is2345 || isSogou || isLiebao){
+      setTimeout(getDF,500)
+    }
+
+    //阻止下拉刷新
+    document.addEventListener('touchmove', function (event) {
+      event.preventDefault();
+    }, false);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <!--第一屏-->
+    <div class="full-page page1 show">
+      <div>测试</div>
+    </div>
+    <!--第二屏-->
+    <div class="full-page page2"></div>
+    <!--第三屏-->
+    <div class="full-page page3"></div>
+  </div>
+  <script src="./js/main.js"></script>
+</body>
+</html>

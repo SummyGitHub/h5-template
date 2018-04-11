@@ -1,26 +1,34 @@
 {
   "name": "h5-template",
   "version": "1.0.0",
-  "description": "a module for h5 production",
-  "main": "js/index.js",
-  "dependencies": {
-    "html-webpack-plugin": "^3.2.0",
-    "sass-loader": "^6.0.7",
-    "webpack": "^4.5.0",
-    "webpack-dev-server": "^3.1.3"
-  },
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
   "devDependencies": {
-    "babel-loader": "^7.1.4",
-    "css-loader": "^0.28.11",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "node-sass": "^4.8.3",
-    "style-loader": "^0.20.3",
-    "webpack-cli": "^2.0.14"
+    "browser-sync": "^2.23.6",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-html-css-js-base64": "0.0.3",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sequence": "^1.0.0",
+    "gulp-uglify": "^3.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SummyGitHub/h5-template.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SummyGitHub/h5-template/issues"
+  },
+  "homepage": "https://github.com/SummyGitHub/h5-template#readme"
 }

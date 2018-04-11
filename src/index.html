@@ -6,7 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>H5模板</title>
   <link rel="stylesheet" href="./style/style.css">
+  <script src="https://cdn.bootcss.com/PreloadJS/1.0.1/preloadjs.min.js"></script>
   <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+  <!-- 下面代码可以用于移动端调试，发布时请删去 -->
+  <script src="https://cdn.bootcss.com/eruda/1.4.3/eruda.js"></script>
+  <script>
+    eruda.init()
+  </script>
   <script>
     //只允许微信打开
     // if (navigator.userAgent.match(/MicroMessenger/i) != 'MicroMessenger') {
@@ -59,6 +65,6 @@
     <!--第三屏-->
     <div class="full-page page3"></div>
   </div>
-  <script src="./js/main.js"></script>
+  <script src="./js/preload.js"></script>
 </body>
 </html>
